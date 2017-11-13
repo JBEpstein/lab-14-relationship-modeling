@@ -27,6 +27,7 @@
     "expect": "^21.2.1",
     "express": "^4.16.2",
     "mocha": "^4.0.1",
+    "mongodb": "^2.2.33",
     "mongoose": "^4.13.2",
     "nodemon": "^1.12.1",
     "superagent": "^3.8.1"
