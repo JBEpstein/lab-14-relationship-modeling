@@ -7,8 +7,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon ./index.js",
-    "db": "mkdir -p ./db && mongod --dbpath ./db"
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
