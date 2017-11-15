@@ -23,7 +23,7 @@ describe('Testing Population of Wizards and Films', () => {
         done();
     });
 
-    it('Should create a new wizard using POST', function(done){
+    it('Create a new wizard using POST', function(done){
         request.post(`localhost:3000/v1/wizards`).send({name: 'Gandalf'}).then(response => {
             wizardId = response.body._id;
             expect(response.statusCode).toEqual(200);
@@ -32,7 +32,7 @@ describe('Testing Population of Wizards and Films', () => {
         });
     });
 
-    it('Should create a new film and associate our wizards ID to it', function(done){
+    it('Create a new film and associate our wizards ID to it', function(done){
         request.post('localhost:3000/v1/films').send({title: 'LOTR', Wizard: wizardId}).then(response => {
             expect(response.body.title).toEqual('LOTR');
             expect(response.body.Wizard[0]).toEqual(wizardId);
@@ -41,7 +41,7 @@ describe('Testing Population of Wizards and Films', () => {
         });
     });
 
-    it('Should populate our LOTR film with our Gandalf Wizard', function(done) {
+    it('Populate LOTR film with Gandalf Wizard', function(done) {
         request.get(`localhost:3000/v1/populate/${filmId}`).then(res => {
 
             expect(res.body._id).toEqual(filmId);
